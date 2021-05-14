@@ -1,22 +1,7 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import NotFound from './views/NotFound';
-import Login from './views/Login';
-
+import CustomRouter from './router/CustomRouter';
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/404" component={NotFound} />
-        <Route path="/login" component={Login} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
-  );
+  return <CustomRouter></CustomRouter>;
 }
 
 export default App;
