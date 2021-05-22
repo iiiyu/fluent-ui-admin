@@ -183,13 +183,16 @@ function Dashboard() {
         />
       </nav>
       <main className="mt-12 ml-60 h-full fixed">
-        <Breadcrumb
-          items={items}
-          maxDisplayedItems={10}
-          ariaLabel="Breadcrumb with items rendered as buttons"
-          overflowAriaLabel="More links"
-          className="fixed shadow-sm"
-        />
+        <div className="fixed w-full h-auto">
+          <Breadcrumb
+            items={items}
+            maxDisplayedItems={10}
+            ariaLabel="Breadcrumb with items rendered as buttons"
+            overflowAriaLabel="More links"
+            className="my-1"
+          />
+        </div>
+
         <div className="p-6 overflow-y-auto mt-12 h-full">
           Lorem ipsum dolor sit amet, eam cu tota tation, quo no consulatu
           imperdiet intellegebat. Et apeirian legendos maiestatis duo, sint
