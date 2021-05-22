@@ -1,5 +1,6 @@
 import React from 'react';
-import {Nav, INavStyles, INavLinkGroup} from '@fluentui/react/lib/Nav';
+import SideMenu from './SideMenu';
+import Header from './Header';
 import {
   Breadcrumb,
   IBreadcrumbItem,
@@ -33,115 +34,6 @@ const items: IBreadcrumbItem[] = [
   },
 ];
 
-const navStyles: Partial<INavStyles> = {
-  root: {
-    boxSizing: 'border-box',
-    border: '1px solid #eee',
-    overflowY: 'auto',
-  },
-  // these link styles override the default truncation behavior
-  link: {
-    whiteSpace: 'normal',
-    lineHeight: 'inherit',
-  },
-};
-
-// adding an empty title string to each link removes the tooltip;
-// it's unnecessary now that the text wraps, and will not truncat;
-const navLinkGroups: INavLinkGroup[] = [
-  {
-    name: 'Basic components',
-    expandAriaLabel: 'Expand Basic components section',
-    collapseAriaLabel: 'Collapse Basic components section',
-    links: [
-      {
-        key: 'ActivityItem',
-        name: 'ActivityItem',
-        url: '#/examples/activityitem',
-      },
-      {
-        key: 'Breadcrumb',
-        name: 'Breadcrumb',
-        url: '#/examples/breadcrumb',
-      },
-      {
-        key: 'Button',
-        name: 'Button',
-        url: '#/examples/button',
-      },
-      {
-        name: 'Home',
-        url: 'http://example.com',
-        expandAriaLabel: 'Expand Home section',
-        collapseAriaLabel: 'Collapse Home section',
-        title: '',
-        links: [
-          {
-            name: 'Activity',
-            url: 'http://msn.com',
-            key: 'key1',
-            target: '_blank',
-            title: '',
-          },
-          {
-            name: 'MSN',
-            url: 'http://msn.com',
-            disabled: true,
-            key: 'key2',
-            target: '_blank',
-            title: '',
-          },
-        ],
-        isExpanded: true,
-      },
-    ],
-  },
-  {
-    name: 'Extended components',
-    expandAriaLabel: 'Expand Extended components section',
-    collapseAriaLabel: 'Collapse Extended components section',
-    links: [
-      {
-        key: 'ColorPicker',
-        name: 'ColorPicker',
-        url: '#/examples/colorpicker',
-      },
-      {
-        key: 'ExtendedPeoplePicker',
-        name: 'ExtendedPeoplePicker',
-        url: '#/examples/extendedpeoplepicker',
-      },
-      {
-        key: 'GroupedList',
-        name: 'GroupedList',
-        url: '#/examples/groupedlist',
-      },
-    ],
-  },
-  {
-    name: 'Utilities',
-    expandAriaLabel: 'Expand Utilities section',
-    collapseAriaLabel: 'Collapse Utilities section',
-    links: [
-      {
-        key: 'FocusTrapZone',
-        name: 'FocusTrapZone',
-        url: '#/examples/focustrapzone',
-      },
-      {
-        key: 'FocusZone',
-        name: 'FocusZone',
-        url: '#/examples/focuszone',
-      },
-      {
-        key: 'MarqueeSelection',
-        name: 'MarqueeSelection',
-        url: '#/examples/marqueeselection',
-      },
-    ],
-  },
-];
-
 function _onBreadcrumbItemClicked(
   ev?: React.MouseEvent<HTMLElement, MouseEvent> | undefined,
   item?: IBreadcrumbItem | undefined
@@ -167,20 +59,12 @@ function _getCustomOverflowIcon(): JSX.Element {
   return <Icon iconName={'ChevronDown'} />;
 }
 
-function Dashboard() {
+function DashboardLayout() {
   return (
     <div className="">
-      <header className="bg-blue-600 w-full py-3 fixed top-0 right-0">
-        <div>
-          <div>hello dashboard!</div>
-        </div>
-      </header>
+      <Header></Header>
       <nav className="border-r border-gray-100 h-full top-12 fixed w-60 overflow-y-auto">
-        <Nav
-          selectedKey="key6"
-          ariaLabel="Nav example with wrapped link text"
-          groups={navLinkGroups}
-        />
+        <SideMenu></SideMenu>
       </nav>
       <main className="mt-12 ml-60 h-full fixed">
         <div className="fixed w-full h-auto">
@@ -444,4 +328,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashboardLayout;
