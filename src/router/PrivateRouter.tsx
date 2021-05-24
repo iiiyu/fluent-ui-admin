@@ -1,18 +1,20 @@
 import React from 'react';
 import {Route, Redirect, RouteProps} from 'react-router-dom'; // A wrapper for <Route> that redirects to the login
 import {useAuth} from '../context/auth';
-import Dashboardlayout from '../components/layout/DashboardLayout';
+import BasicLayout from '../components/layout/BasicLayout';
 
 type PrivateProps = {
   children: React.ReactNode;
 } & RouteProps;
 // screen if you're not yet authenticated.
 
-function DashboardRouter() {
+function PrivateRouter() {
   return (
-    <PrivateRoute path="/dashboard">
-      <Route component={Dashboardlayout}></Route>
-    </PrivateRoute>
+    <>
+      <PrivateRoute path="/">
+        <Route component={BasicLayout}></Route>
+      </PrivateRoute>
+    </>
   );
 }
 
@@ -37,4 +39,4 @@ function PrivateRoute({children, ...rest}: PrivateProps) {
   );
 }
 
-export default DashboardRouter;
+export default PrivateRouter;

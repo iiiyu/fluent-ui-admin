@@ -5,6 +5,16 @@ import {Nav, INavStyles, INavLinkGroup} from '@fluentui/react/lib/Nav';
 // it's unnecessary now that the text wraps, and will not truncat;
 const navLinkGroups: INavLinkGroup[] = [
   {
+    name: 'Dashboard',
+    links: [
+      {
+        key: 'Home',
+        name: 'Home',
+        url: '/dashboard',
+      },
+    ],
+  },
+  {
     name: 'Basic components',
     expandAriaLabel: 'Expand Basic components section',
     collapseAriaLabel: 'Collapse Basic components section',
@@ -52,7 +62,7 @@ const navLinkGroups: INavLinkGroup[] = [
     ],
   },
   {
-    name: 'Extended components',
+    name: 'Icons',
     expandAriaLabel: 'Expand Extended components section',
     collapseAriaLabel: 'Collapse Extended components section',
     links: [
