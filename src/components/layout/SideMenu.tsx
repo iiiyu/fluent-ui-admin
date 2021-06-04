@@ -20,9 +20,14 @@ const navLinkGroups: INavLinkGroup[] = [
     collapseAriaLabel: 'Collapse Basic components section',
     links: [
       {
-        key: 'ActivityItem',
-        name: 'ActivityItem',
-        url: '#/examples/activityitem',
+        key: 'Button',
+        name: 'Button',
+        url: '/ui/button',
+      },
+      {
+        key: 'Checkbox',
+        name: 'Checkbox',
+        url: '/ui/checkbox',
       },
       {
         key: 'Breadcrumb',

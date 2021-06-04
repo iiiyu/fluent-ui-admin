@@ -4,6 +4,8 @@ import Header from './Header';
 import Breadcrumb from './Breadcrumb';
 import {Route, Switch, useRouteMatch} from 'react-router-dom';
 import Test from '../Test';
+import ButtonContent from '../ui/ButtonContent';
+import CheckboxContent from '../ui/CheckboxContent';
 function BasicLayout() {
   const {path, url} = useRouteMatch();
   console.log(path);
@@ -22,6 +24,12 @@ function BasicLayout() {
           <Switch>
             <Route exact path={path}></Route>
             <Route path={`${path}/test`} component={Test}></Route>
+            <Route exact path="/ui/button" component={ButtonContent}></Route>
+            <Route
+              exact
+              path="/ui/checkbox"
+              component={CheckboxContent}
+            ></Route>
           </Switch>
         </div>
       </main>
