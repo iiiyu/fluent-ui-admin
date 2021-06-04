@@ -18,6 +18,7 @@ import {
   HighContrastSelector,
   ContextualMenu,
 } from '@fluentui/react';
+import ContentBasicLayout from './ContentBasicLayout';
 
 function ButtonContent() {
   // icons
@@ -111,198 +112,196 @@ function ButtonContent() {
   };
 
   return (
-    <div className="h-full flex flex-col space-y-4">
-      <h1 className="text-5xl">Button Demo</h1>
-      <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/button">
-        Fluent UI Button Document
-      </a>
-      <div className="container flex flex-col space-y-4">
-        <div className="flex flex-row space-x-4">
-          <Toggle
-            label="Button Disabled"
-            defaultChecked={disabled}
-            onText="On"
-            offText="Off"
-            onChange={_onChangeDisabledButton}
-          />
+    <ContentBasicLayout
+      title="Button"
+      url="https://developer.microsoft.com/en-us/fluentui#/controls/web/button"
+      documentTitle="Fluent UI Button Document"
+    >
+      <div className="flex flex-row space-x-4">
+        <Toggle
+          label="Button Disabled"
+          defaultChecked={disabled}
+          onText="On"
+          offText="Off"
+          onChange={_onChangeDisabledButton}
+        />
 
-          <Toggle
-            label="Button Checked"
-            defaultChecked={checked}
-            onText="On"
-            offText="Off"
-            onChange={_onChangeCheckedButton}
-          />
-        </div>
-
-        <div className="space-x-2">
-          <DefaultButton
-            text="Standard"
-            onClick={_alertClicked}
-            allowDisabledFocus
-            disabled={disabled}
-            checked={checked}
-          />
-          <PrimaryButton
-            text="Primary"
-            onClick={_alertClicked}
-            allowDisabledFocus
-            disabled={disabled}
-            checked={checked}
-          />
-        </div>
-        <div className="space-x-2">
-          <CompoundButton
-            secondaryText="This is the secondary text."
-            disabled={disabled}
-            checked={checked}
-          >
-            Standard
-          </CompoundButton>
-          <CompoundButton
-            primary
-            secondaryText="This is the secondary text."
-            disabled={disabled}
-            checked={checked}
-          >
-            Primary
-          </CompoundButton>
-        </div>
-
-        <div className="space-x-2 flex items-center">
-          <DefaultButton
-            href="https://google.com"
-            target="_blank"
-            title="let us google!"
-            disabled={disabled}
-            checked={checked}
-          >
-            Google
-          </DefaultButton>
-          <DefaultButton
-            toggle
-            checked={muted || checked}
-            text={muted ? 'Volume muted' : 'Volume unmuted'}
-            iconProps={muted ? volume0Icon : volume3Icon}
-            onClick={_onClickVolumeButton}
-            allowDisabledFocus
-            disabled={disabled}
-          />
-          <ActionButton
-            iconProps={addFriendIcon}
-            allowDisabledFocus
-            disabled={disabled}
-            checked={checked}
-          >
-            Create account
-          </ActionButton>
-          <CommandBarButton
-            className="py-3 px-2"
-            iconProps={mailIcon}
-            text="Send mail"
-            disabled={disabled}
-            checked={checked}
-          />
-          <IconButton
-            iconProps={emojiIcon}
-            title="Emoji"
-            ariaLabel="Emoji"
-            disabled={disabled}
-            checked={checked}
-          />
-        </div>
-
-        <div className="space-x-2 flex items-center">
-          <DefaultButton
-            text="Standard"
-            split
-            splitButtonAriaLabel="See 2 options"
-            aria-roledescription="split button"
-            menuProps={menuProps}
-            onClick={_alertClicked}
-            disabled={disabled}
-            checked={checked}
-          />
-          <DefaultButton
-            text="Primary"
-            primary
-            split
-            splitButtonAriaLabel="See 2 options"
-            aria-roledescription="split button"
-            menuProps={menuProps}
-            onClick={_alertClicked}
-            disabled={disabled}
-            checked={checked}
-          />
-          <DefaultButton
-            text="Main action disabled"
-            primaryDisabled
-            split
-            splitButtonAriaLabel="See 2 options"
-            aria-roledescription="split button"
-            menuProps={menuProps}
-            onClick={_alertClicked}
-            disabled={disabled}
-            checked={checked}
-          />
-          <DefaultButton
-            text="Disabled"
-            disabled
-            split
-            splitButtonAriaLabel="See 2 options"
-            aria-roledescription="split button"
-            menuProps={menuProps}
-            onClick={_alertClicked}
-            checked={checked}
-          />
-        </div>
-
-        <div className="space-x-2 flex items-center">
-          <DefaultButton
-            text="New item"
-            iconProps={addIcon}
-            menuProps={menuProps}
-            // Optional callback to customize menu rendering
-            menuAs={_getMenu}
-            // Optional callback to do other actions (besides opening the menu) on click
-            onMenuClick={_onMenuClick}
-            // By default, the ContextualMenu is re-created each time it's shown and destroyed when closed.
-            // Uncomment the next line to hide the ContextualMenu but persist it in the DOM instead.
-            // persistMenu={true}
-            allowDisabledFocus
-            disabled={disabled}
-            checked={checked}
-          />
-          <CommandButton
-            iconProps={addIcon}
-            text="New item"
-            menuProps={menuProps}
-            disabled={disabled}
-            checked={checked}
-          />
-          <IconButton
-            menuProps={menuProps}
-            iconProps={emojiIcon}
-            title="Emoji"
-            ariaLabel="Emoji"
-            disabled={disabled}
-            checked={checked}
-          />
-          <IconButton
-            split
-            iconProps={addIcon}
-            splitButtonAriaLabel="See 2 options"
-            aria-roledescription="split button"
-            styles={customSplitButtonStyles}
-            menuProps={menuProps}
-            ariaLabel="New item"
-            onClick={_alertClicked}
-            disabled={disabled}
-            checked={checked}
-          />
-        </div>
+        <Toggle
+          label="Button Checked"
+          defaultChecked={checked}
+          onText="On"
+          offText="Off"
+          onChange={_onChangeCheckedButton}
+        />
       </div>
-    </div>
+
+      <div className="space-x-2">
+        <DefaultButton
+          text="Standard"
+          onClick={_alertClicked}
+          allowDisabledFocus
+          disabled={disabled}
+          checked={checked}
+        />
+        <PrimaryButton
+          text="Primary"
+          onClick={_alertClicked}
+          allowDisabledFocus
+          disabled={disabled}
+          checked={checked}
+        />
+      </div>
+      <div className="space-x-2">
+        <CompoundButton
+          secondaryText="This is the secondary text."
+          disabled={disabled}
+          checked={checked}
+        >
+          Standard
+        </CompoundButton>
+        <CompoundButton
+          primary
+          secondaryText="This is the secondary text."
+          disabled={disabled}
+          checked={checked}
+        >
+          Primary
+        </CompoundButton>
+      </div>
+
+      <div className="space-x-2 flex items-center">
+        <DefaultButton
+          href="https://google.com"
+          target="_blank"
+          title="let us google!"
+          disabled={disabled}
+          checked={checked}
+        >
+          Google
+        </DefaultButton>
+        <DefaultButton
+          toggle
+          checked={muted || checked}
+          text={muted ? 'Volume muted' : 'Volume unmuted'}
+          iconProps={muted ? volume0Icon : volume3Icon}
+          onClick={_onClickVolumeButton}
+          allowDisabledFocus
+          disabled={disabled}
+        />
+        <ActionButton
+          iconProps={addFriendIcon}
+          allowDisabledFocus
+          disabled={disabled}
+          checked={checked}
+        >
+          Create account
+        </ActionButton>
+        <CommandBarButton
+          className="py-3 px-2"
+          iconProps={mailIcon}
+          text="Send mail"
+          disabled={disabled}
+          checked={checked}
+        />
+        <IconButton
+          iconProps={emojiIcon}
+          title="Emoji"
+          ariaLabel="Emoji"
+          disabled={disabled}
+          checked={checked}
+        />
+      </div>
+
+      <div className="space-x-2 flex items-center">
+        <DefaultButton
+          text="Standard"
+          split
+          splitButtonAriaLabel="See 2 options"
+          aria-roledescription="split button"
+          menuProps={menuProps}
+          onClick={_alertClicked}
+          disabled={disabled}
+          checked={checked}
+        />
+        <DefaultButton
+          text="Primary"
+          primary
+          split
+          splitButtonAriaLabel="See 2 options"
+          aria-roledescription="split button"
+          menuProps={menuProps}
+          onClick={_alertClicked}
+          disabled={disabled}
+          checked={checked}
+        />
+        <DefaultButton
+          text="Main action disabled"
+          primaryDisabled
+          split
+          splitButtonAriaLabel="See 2 options"
+          aria-roledescription="split button"
+          menuProps={menuProps}
+          onClick={_alertClicked}
+          disabled={disabled}
+          checked={checked}
+        />
+        <DefaultButton
+          text="Disabled"
+          disabled
+          split
+          splitButtonAriaLabel="See 2 options"
+          aria-roledescription="split button"
+          menuProps={menuProps}
+          onClick={_alertClicked}
+          checked={checked}
+        />
+      </div>
+
+      <div className="space-x-2 flex items-center">
+        <DefaultButton
+          text="New item"
+          iconProps={addIcon}
+          menuProps={menuProps}
+          // Optional callback to customize menu rendering
+          menuAs={_getMenu}
+          // Optional callback to do other actions (besides opening the menu) on click
+          onMenuClick={_onMenuClick}
+          // By default, the ContextualMenu is re-created each time it's shown and destroyed when closed.
+          // Uncomment the next line to hide the ContextualMenu but persist it in the DOM instead.
+          // persistMenu={true}
+          allowDisabledFocus
+          disabled={disabled}
+          checked={checked}
+        />
+        <CommandButton
+          iconProps={addIcon}
+          text="New item"
+          menuProps={menuProps}
+          disabled={disabled}
+          checked={checked}
+        />
+        <IconButton
+          menuProps={menuProps}
+          iconProps={emojiIcon}
+          title="Emoji"
+          ariaLabel="Emoji"
+          disabled={disabled}
+          checked={checked}
+        />
+        <IconButton
+          split
+          iconProps={addIcon}
+          splitButtonAriaLabel="See 2 options"
+          aria-roledescription="split button"
+          styles={customSplitButtonStyles}
+          menuProps={menuProps}
+          ariaLabel="New item"
+          onClick={_alertClicked}
+          disabled={disabled}
+          checked={checked}
+        />
+      </div>
+    </ContentBasicLayout>
   );
 }
 
