@@ -15,7 +15,7 @@ function Login() {
   const login = async () => {
     const user = await auth?.signin('asdfasdf', 'sadfasdf');
     if (user) {
-      history.replace('/dashboard');
+      history.replace('/');
     }
   };
   return (

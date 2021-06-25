@@ -20,7 +20,6 @@ export const useAuth = () => {
 // fake auth user api
 const fakeAuth = {
   signin(email: string, password: string): Promise<User> {
-    console.log(password);
     const user: User = {email: email, name: email};
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -38,10 +37,10 @@ const fakeAuth = {
 };
 
 function userProvideAuth() {
-  const [user, SetUser] = useState<User | null>(null);
+  const initUser: User = {email: 'email', name: 'email'};
+  const [user, SetUser] = useState<User | null>(initUser);
 
   const signin = async (email: string, password: string) => {
-    console.log('hello11');
     const user = await fakeAuth.signin(email, password);
     SetUser(user);
     return user;

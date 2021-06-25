@@ -1,10 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import PublicRouter from './PublicRouter';
+import PrivateRouter from './PrivateRouter';
 import NotFound from '../views/NotFound';
 import Login from '../views/Login';
-import Dashboard from '../views/Dashboard';
-import {PrivateRoute} from './PrivateRoute';
 import {ProvideAuth} from '../context/auth';
+import BasicLayout from '../components/layout/BasicLayout';
 
 function CustomRouter() {
   return (
@@ -13,9 +14,7 @@ function CustomRouter() {
         <Switch>
           <Route path="/404" component={NotFound} />
           <Route path="/login" component={Login} />
-          <PrivateRoute path="/dashboard">
-            <Route component={Dashboard} />
-          </PrivateRoute>
+          <PrivateRouter></PrivateRouter>
           <Route component={NotFound} />
         </Switch>
       </Router>
