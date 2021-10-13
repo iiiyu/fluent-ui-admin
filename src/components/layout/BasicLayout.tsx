@@ -6,6 +6,8 @@ import {Route, Switch, useRouteMatch} from 'react-router-dom';
 import Test from '../Test';
 import ButtonContent from '../ui/ButtonContent';
 import CheckboxContent from '../ui/CheckboxContent';
+
+
 function BasicLayout() {
   const {path, url} = useRouteMatch();
   console.log(path);

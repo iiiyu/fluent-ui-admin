@@ -3,12 +3,13 @@
 
 ## 3rd Libraies
 ### UI
-TailwindCSS
-FlutentUI
+- TailwindCSS
+- FlutentUI
 
 ### non UI
-React
-React Router
+- React
+- React Router
+- React Redux
 
 ## Code Style
 Follow [Google Code Style Guide](https://google.github.io/styleguide/tsguide.html)

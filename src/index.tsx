@@ -4,12 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {initializeIcons} from '@fluentui/react/lib/Icons';
+import {BrowserRouter as Router} from 'react-router-dom';
+
+import RouteChildren from './router';
 
 initializeIcons(undefined, {disableWarnings: true});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <RouteChildren></RouteChildren>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
